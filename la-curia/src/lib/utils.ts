@@ -4,6 +4,7 @@ export function formatDate(dateString: string): string {
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "Europe/Rome",
   });
 }
 
@@ -13,6 +14,7 @@ export function formatDateShort(dateString: string): string {
     day: "numeric",
     month: "short",
     year: "numeric",
+    timeZone: "Europe/Rome",
   });
 }
 
@@ -22,5 +24,6 @@ export function getTodayFormatted(): string {
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "Europe/Rome",
   });
 }
