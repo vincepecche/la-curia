@@ -70,14 +70,33 @@ export default async function ArticlePage({ params }: Props) {
           ← Torna alla home
         </Link>
 
-        {article.category && (
-          <div
-            className="article-view-category"
-            style={{ color: article.category.color }}
-          >
-            {article.category.title}
-          </div>
-        )}
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+          {article.category && (
+            <div
+              className="article-view-category"
+              style={{ color: article.category.color, marginBottom: 0 }}
+            >
+              {article.category.title}
+            </div>
+          )}
+          {article.tipo && (
+            <span
+              style={{
+                fontFamily: "var(--sans)",
+                fontSize: 11,
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                color: "white",
+                background: article.category?.color || "var(--ink)",
+                padding: "3px 10px",
+                borderRadius: 2,
+              }}
+            >
+              {article.tipo}
+            </span>
+          )}
+        </div>
 
         <h1>{article.title}</h1>
 
