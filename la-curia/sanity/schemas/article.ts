@@ -1,5 +1,5 @@
 import { defineType, defineField } from "sanity";
-
+ 
 export default defineType({
   name: "article",
   title: "Articolo",
@@ -18,6 +18,24 @@ export default defineType({
       options: { source: "title", maxLength: 120 },
       validation: (Rule) => Rule.required(),
       description: "Clicca 'Generate' per creare automaticamente dall'titolo",
+    }),
+    defineField({
+      name: "tipo",
+      title: "Tipo di articolo",
+      type: "string",
+      description: "Opzionale. Se indicato, apparirà come etichetta accanto alla categoria.",
+      options: {
+        list: [
+          { title: "Editoriale", value: "Editoriale" },
+          { title: "Opinione", value: "Opinione" },
+          { title: "Analisi", value: "Analisi" },
+          { title: "Intervista", value: "Intervista" },
+          { title: "Reportage", value: "Reportage" },
+          { title: "Commento", value: "Commento" },
+          { title: "Inchiesta", value: "Inchiesta" },
+        ],
+        layout: "dropdown",
+      },
     }),
     defineField({
       name: "excerpt",
@@ -135,15 +153,18 @@ export default defineType({
       title: "title",
       author: "author.name",
       category: "category.title",
+      tipo: "tipo",
       media: "mainImage",
     },
     prepare(selection) {
-      const { title, author, category, media } = selection;
+      const { title, author, category, tipo, media } = selection;
+      const prefix = tipo ? `${tipo} | ` : "";
       return {
         title,
-        subtitle: `${category || "Senza categoria"} — ${author || "Senza autore"}`,
+        subtitle: `${prefix}${category || "Senza categoria"} — ${author || "Senza autore"}`,
         media,
       };
     },
   },
 });
+ 
