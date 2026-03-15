@@ -9,14 +9,33 @@ export default function ArticleCard({ article }: { article: any }) {
       className="article-list-item"
     >
       <div>
-        {article.category && (
-          <span
-            className="category-tag"
-            style={{ color: article.category.color }}
-          >
-            {article.category.title}
-          </span>
-        )}
+        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+          {article.category && (
+            <span
+              className="category-tag"
+              style={{ color: article.category.color, marginBottom: 0 }}
+            >
+              {article.category.title}
+            </span>
+          )}
+          {article.tipo && (
+            <span
+              style={{
+                fontFamily: "var(--sans)",
+                fontSize: 10,
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                color: "white",
+                background: article.category?.color || "var(--ink)",
+                padding: "2px 8px",
+                borderRadius: 2,
+              }}
+            >
+              {article.tipo}
+            </span>
+          )}
+        </div>
         <div className="list-item-title">{article.title}</div>
         <p className="article-excerpt">{article.excerpt}</p>
         <div className="article-meta">
