@@ -1,9 +1,3 @@
-══════════════════════════════════════════════════════════
-FILE 2 di 4
-Percorso su GitHub: la-curia/src/lib/sanity.queries.ts
-Azione: sostituisci TUTTO il contenuto
-══════════════════════════════════════════════════════════
-
 import { client } from "./sanity.client";
 
 // Tutti gli articoli (homepage)
