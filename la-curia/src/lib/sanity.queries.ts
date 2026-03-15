@@ -1,3 +1,9 @@
+══════════════════════════════════════════════════════════
+FILE 2 di 4
+Percorso su GitHub: la-curia/src/lib/sanity.queries.ts
+Azione: sostituisci TUTTO il contenuto
+══════════════════════════════════════════════════════════
+
 import { client } from "./sanity.client";
 
 // Tutti gli articoli (homepage)
@@ -11,6 +17,7 @@ export async function getAllArticles() {
       mainImage,
       featured,
       readTime,
+      tipo,
       publishedAt,
       "category": category->{title, slug, color},
       "author": author->{name, role, slug}
@@ -29,6 +36,7 @@ export async function getFeaturedArticles() {
       mainImage,
       featured,
       readTime,
+      tipo,
       publishedAt,
       "category": category->{title, slug, color},
       "author": author->{name, role, slug}
@@ -46,6 +54,7 @@ export async function getLatestArticles() {
       excerpt,
       mainImage,
       readTime,
+      tipo,
       publishedAt,
       "category": category->{title, slug, color},
       "author": author->{name, role, slug}
@@ -65,6 +74,7 @@ export async function getArticleBySlug(slug: string) {
       body,
       mainImage,
       readTime,
+      tipo,
       publishedAt,
       "category": category->{title, slug, color},
       "author": author->{name, role, slug, bio, image}
@@ -94,6 +104,7 @@ export async function getArticlesByCategory(categorySlug: string) {
       excerpt,
       mainImage,
       readTime,
+      tipo,
       publishedAt,
       "category": category->{title, slug, color},
       "author": author->{name, role, slug}
