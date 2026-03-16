@@ -28,12 +28,14 @@ export default async function HomePage() {
       {main && (
         <div className="breaking-bar">
           <span className="breaking-label">Ultima Ora</span>
-          <span className="breaking-text">
-            {allArticles
-              .slice(0, 3)
-              .map((a: any) => a.title)
-              .join(" — ")}
-          </span>
+          <div className="breaking-scroll">
+            <span className="breaking-text">
+              {allArticles
+                .slice(0, 3)
+                .map((a: any) => a.title)
+                .join(" — ")}
+            </span>
+          </div>
         </div>
       )}
 
